@@ -1,4 +1,6 @@
 import 'package:ecommerce_app/app.dart';
+import 'package:ecommerce_app/common/widgets_login_signup/form_divider.dart';
+import 'package:ecommerce_app/common/widgets_login_signup/social_buttons.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/constants/text_strings.dart';
@@ -21,6 +23,7 @@ class SignupScreen extends StatelessWidget {
             TSizes.defaultSpace,
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(TTexts.signupTitle,
                   style: Theme.of(context).textTheme.headlineMedium),
@@ -28,138 +31,164 @@ class SignupScreen extends StatelessWidget {
                 height: TSizes.spaceBtwSections,
               ),
               Form(
-                  child: Column(
-                children: [
-                  Row(
-                    children: [
-                      ///firstname
-                      Expanded(
-                        child: TextFormField(
-                          expands: false,
-                          decoration: const InputDecoration(
-                            labelText: TTexts.firstName,
-                            prefixIcon: Icon(Iconsax.user),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        ///firstname
+                        Expanded(
+                          child: TextFormField(
+                            expands: false,
+                            decoration: const InputDecoration(
+                              labelText: TTexts.firstName,
+                              prefixIcon: Icon(Iconsax.user),
+                            ),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        width: TSizes.spaceBtwInputFields,
-                      ),
-
-                      ///lastname
-                      Expanded(
-                        child: TextFormField(
-                          expands: false,
-                          decoration: const InputDecoration(
-                            labelText: TTexts.lastName,
-                            prefixIcon: Icon(Iconsax.user),
-                          ),
+                        const SizedBox(
+                          width: TSizes.spaceBtwInputFields,
                         ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: TSizes.spaceBtwInputFields,
-                  ),
 
-                  ///username
-                  TextFormField(
-                    expands: false,
-                    decoration: const InputDecoration(
-                      labelText: TTexts.username,
-                      prefixIcon: Icon(Iconsax.user_edit),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: TSizes.spaceBtwInputFields,
-                  ),
-
-                  /// email
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: TTexts.email,
-                      prefixIcon: Icon(Iconsax.direct),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: TSizes.spaceBtwInputFields,
-                  ),
-
-                  ///phone number
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: TTexts.phoneNo,
-                      prefixIcon: Icon(Iconsax.call),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: TSizes.spaceBtwInputFields,
-                  ),
-
-                  ///password
-                  TextFormField(
-                    obscureText: true,
-                    decoration: const InputDecoration(
-                      labelText: TTexts.password,
-                      prefixIcon: Icon(Iconsax.password_check),
-                      suffixIcon: Icon(Iconsax.eye_slash),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: TSizes.spaceBtwSections,
-                  ),
-
-                  /// terms and condition checkbox
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 24,
-                        height: 24,
-                        child: Checkbox(value: true, onChanged: (value) {}),
-                      ),
-                      const SizedBox(
-                        width: TSizes.spaceBtwItems,
-                      ),
-                      Text.rich(
-                        TextSpan(children: [
-                          TextSpan(
-                              text: '${TTexts.iAgreeTo} ',
-                              style: Theme.of(context).textTheme.bodySmall),
-                          TextSpan(
-                            text: '${TTexts.privacyPolicy} ',
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .apply(
-                                  color: dark ? TColors.white : TColors.primary,
-                                  decoration: TextDecoration.underline,
-                                  decorationColor:
-                                      dark ? TColors.white : TColors.primary,
-                                ),
+                        ///lastname
+                        Expanded(
+                          child: TextFormField(
+                            expands: false,
+                            decoration: const InputDecoration(
+                              labelText: TTexts.lastName,
+                              prefixIcon: Icon(Iconsax.user),
+                            ),
                           ),
-                          TextSpan(
-                              text: '${TTexts.and} ',
-                              style: Theme.of(context).textTheme.bodySmall),
-                          TextSpan(
-                            text: '${TTexts.termsOfUse} ',
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .apply(
-                                  color: dark ? TColors.white : TColors.primary,
-                                  decoration: TextDecoration.underline,
-                                  decorationColor:
-                                      dark ? TColors.white : TColors.primary,
-                                ),
-                          ),
-                        ]),
-                      ),
-                    ],
-                  )
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: TSizes.spaceBtwInputFields,
+                    ),
 
-                  /// Signup button
-                ],
-              ))
+                    ///username
+                    TextFormField(
+                      expands: false,
+                      decoration: const InputDecoration(
+                        labelText: TTexts.username,
+                        prefixIcon: Icon(Iconsax.user_edit),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: TSizes.spaceBtwInputFields,
+                    ),
+
+                    /// email
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: TTexts.email,
+                        prefixIcon: Icon(Iconsax.direct),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: TSizes.spaceBtwInputFields,
+                    ),
+
+                    ///phone number
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: TTexts.phoneNo,
+                        prefixIcon: Icon(Iconsax.call),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: TSizes.spaceBtwInputFields,
+                    ),
+
+                    ///password
+                    TextFormField(
+                      obscureText: true,
+                      decoration: const InputDecoration(
+                        labelText: TTexts.password,
+                        prefixIcon: Icon(Iconsax.password_check),
+                        suffixIcon: Icon(Iconsax.eye_slash),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: TSizes.spaceBtwSections,
+                    ),
+
+                    /// terms and condition checkbox
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 24,
+                          height: 24,
+                          child: Checkbox(value: true, onChanged: (value) {}),
+                        ),
+                        const SizedBox(
+                          width: TSizes.spaceBtwItems,
+                        ),
+                        Text.rich(
+                          TextSpan(children: [
+                            TextSpan(
+                                text: '${TTexts.iAgreeTo} ',
+                                style: Theme.of(context).textTheme.bodySmall),
+                            TextSpan(
+                              text: '${TTexts.privacyPolicy} ',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .apply(
+                                    color:
+                                        dark ? TColors.white : TColors.primary,
+                                    decoration: TextDecoration.underline,
+                                    decorationColor:
+                                        dark ? TColors.white : TColors.primary,
+                                  ),
+                            ),
+                            TextSpan(
+                                text: '${TTexts.and} ',
+                                style: Theme.of(context).textTheme.bodySmall),
+                            TextSpan(
+                              text: '${TTexts.termsOfUse} ',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .apply(
+                                    color:
+                                        dark ? TColors.white : TColors.primary,
+                                    decoration: TextDecoration.underline,
+                                    decorationColor:
+                                        dark ? TColors.white : TColors.primary,
+                                  ),
+                            ),
+                          ]),
+                        ),
+                      ],
+                    ),
+
+                    const SizedBox(
+                      height: TSizes.spaceBtwSections,
+                    ),
+
+                    /// Signup button
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text(TTexts.createAccount),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: TSizes.spaceBtwSections,
+              ),
+
+              /// divider
+              const FormDivider(dividerText: TTexts.orSignInWith),
+              const SizedBox(
+                height: TSizes.spaceBtwSections,
+              ),
+
+              ///social buttons
+              const SocialButtons(),
             ],
           ),
         ),
