@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/features/shop/home/home.dart';
+import 'package:ecommerce_app/features/shop/screens/home/home.dart';
 import 'package:ecommerce_app/utils/constants/colors.dart';
 import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +16,8 @@ class NavigationMenu extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: Obx(
         () => NavigationBar(
-            // height: 80,
-            height: 70,
+            height: 80,
+            // height: 70,
             elevation: 0,
             selectedIndex: controller.selectedIndex.value,
             onDestinationSelected: (index) =>
