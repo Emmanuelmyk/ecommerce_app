@@ -17,7 +17,9 @@ class HomeCategories extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (_, index) {
             return VerticalImageText(
-                image: TImages.shoeIcon, title: 'Shoes', onTap: () {});
+                image: TImages.shoeIcon,
+                title: 'Slippers and watches',
+                onTap: () {});
           }),
     );
   }
