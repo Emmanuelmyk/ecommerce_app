@@ -23,11 +23,6 @@ class PromoSlider extends StatelessWidget {
             onPageChanged: (index, _) => controller.updatePageIndicator(index),
           ),
           items: banners.map((url) => RoundedImage(imageUrl: url)).toList(),
-          // const [
-          //   RoundedImage(imageUrl: TImages.promoBanner1),
-          //   RoundedImage(imageUrl: TImages.promoBanner2),
-          //   RoundedImage(imageUrl: TImages.promoBanner3),
-          // ],
         ),
         const SizedBox(height: TSizes.spaceBtwItems),
         Center(
