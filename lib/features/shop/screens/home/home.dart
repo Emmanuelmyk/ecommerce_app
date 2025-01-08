@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/common/widgets/custon_shapes/containers/primary_header_container.dart';
 import 'package:ecommerce_app/common/widgets/custon_shapes/containers/search_container.dart';
+import 'package:ecommerce_app/common/widgets/layouts/grid_layout.dart';
 import 'package:ecommerce_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_app/features/shop/screens/home/widgets/home_appbar.dart';
@@ -71,19 +72,9 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   /// Popular Products
-                  GridView.builder(
-                    itemCount: 9,
-                    shrinkWrap: true,
-                    padding: EdgeInsets.zero,
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: TSizes.gridViewSpacing,
-                      crossAxisSpacing: TSizes.gridViewSpacing,
-                      mainAxisExtent: 288,
-                    ),
-                    itemBuilder: (_, index) => ProductCardVertical(),
+                  TGridLayout(
+                    itemCount: 4,
+                    itemBuilder: (_, index) => const ProductCardVertical(),
                   ),
                 ],
               ),
