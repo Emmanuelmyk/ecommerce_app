@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/common/widgets/custon_shapes/containers/primary_header_container.dart';
 import 'package:ecommerce_app/common/widgets/custon_shapes/containers/search_container.dart';
+import 'package:ecommerce_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:ecommerce_app/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:ecommerce_app/features/shop/screens/home/widgets/home_categories.dart';
@@ -54,12 +55,23 @@ class HomeScreen extends StatelessWidget {
             /// Body
             Padding(
               padding: EdgeInsets.all(TSizes.defaultSpace),
-              child: PromoSlider(
-                banners: [
-                  TImages.promoBanner1,
-                  TImages.promoBanner2,
-                  TImages.banner3,
-                  TImages.promoBanner3,
+              child: Column(
+                children: [
+                  PromoSlider(
+                    banners: [
+                      TImages.promoBanner1,
+                      TImages.promoBanner2,
+                      TImages.banner3,
+                      TImages.banner1,
+                      TImages.promoBanner3,
+                    ],
+                  ),
+                  SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  ),
+
+                  /// Popular Products
+                  ProductCardVertical(),
                 ],
               ),
             ),
