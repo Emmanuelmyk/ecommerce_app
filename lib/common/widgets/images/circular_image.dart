@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/utils/constants/colors.dart';
-import 'package:ecommerce_app/utils/constants/image_strings.dart';
 import 'package:ecommerce_app/utils/constants/sizes.dart';
 import 'package:ecommerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +8,7 @@ class CircularImage extends StatelessWidget {
     super.key,
     this.fit = BoxFit.cover,
     required this.image,
-    this.isNetworImage = false,
+    this.isNetworkImage = false,
     this.backgroundColor,
     this.width = 56,
     this.height = 56,
@@ -19,7 +18,7 @@ class CircularImage extends StatelessWidget {
 
   final BoxFit? fit;
   final String image;
-  final bool isNetworImage;
+  final bool isNetworkImage;
   final Color? overlayColor;
   final Color? backgroundColor;
   final double width, height, padding;
@@ -38,9 +37,11 @@ class CircularImage extends StatelessWidget {
         borderRadius: BorderRadius.circular(100),
       ),
       child: Image(
-        image: const AssetImage(TImages.clothIcon),
-        color:
-            THelperFunctions.isDarkMode(context) ? TColors.white : TColors.dark,
+        fit: fit,
+        image: isNetworkImage
+            ? NetworkImage(image)
+            : AssetImage(image) as ImageProvider,
+        color: overlayColor,
       ),
     );
   }
