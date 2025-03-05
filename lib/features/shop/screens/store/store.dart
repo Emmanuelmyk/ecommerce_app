@@ -91,7 +91,7 @@ class StoreScreen extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      BrandTitleWithVerifiedIcon(
+                                      const BrandTitleWithVerifiedIcon(
                                         title: 'Nike',
                                         brandTextSize: TextSizes.large,
                                       ),
